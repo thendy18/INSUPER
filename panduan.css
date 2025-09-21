@@ -1,0 +1,156 @@
+/* --- panduan.css --- */
+@import url('style.css');
+
+.claim-guide-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 5%;
+}
+
+.claim-guide-container h1 {
+    font-size: 3rem;
+    color: #0d2c54;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.claim-guide-container > p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 4rem;
+}
+
+/* Kontainer Horizontal */
+.steps-container-horizontal {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    position: relative;
+    align-items: flex-start;
+}
+
+.steps-container-horizontal::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 4px;
+    background-color: #e0eef2;
+    z-index: 0;
+}
+
+.step-item {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem auto;
+    background-color: #0d2c54;
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #ffffff;
+}
+
+.step-content h3 {
+    font-size: 1.3rem;
+    color: #0d2c54;
+    margin-bottom: 0.5rem;
+}
+
+.step-content p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Section FAQ */
+.faq-section {
+    padding: 5rem 5%;
+    background-color: #f4f7f6; /* Warna latar berbeda */
+    border-top: 1px solid #e0e0e0;
+}
+
+.faq-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0d2c54;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.faq-question .icon {
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.faq-answer p {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.faq-item.active .faq-question .icon {
+    transform: rotate(45deg);
+}
+
+/* Penyesuaian judul FAQ */
+.faq-section .section-title {
+    text-align: center;
+}
+
+/* Responsif */
+@media screen and (max-width: 992px) {
+    .steps-container-horizontal {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .steps-container-horizontal::before {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .steps-container-horizontal {
+        grid-template-columns: 1fr;
+    }
+    .claim-guide-container h1 {
+        font-size: 2.5rem;
+    }
+}

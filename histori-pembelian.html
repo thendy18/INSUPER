@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histori Pembelian - INSUPER</title>
+    <link rel="stylesheet" href="histori.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="brand-logo">
+                <img src="images/logo.png" alt="INSUPER Logo">
+                <span>INSUPER</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html#produk">Produk</a></li>
+                <li><a href="index.html#tentang-kami">Tentang Kami</a></li>
+                <li><a href="index.html#hubungi-kami">Hubungi Kami</a></li>
+                <li><button id="logoutButton" class="btn-logout">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="history-container">
+            <h1>Histori Pembelian Anda</h1>
+            <p>Berikut adalah riwayat pembelian polis asuransi Anda di INSUPER.</p>
+
+            <div id="historyList" class="history-list">
+                </div>
+
+            <div id="noHistoryMessage" style="display: none;">
+                <div class="no-history-message">
+                    <p>Anda belum memiliki riwayat pembelian.</p>
+                    <a href="index.html#produk" class="btn btn-primary">Lihat Produk Kami</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="next-steps-section">
+            <div class="section-title">
+                <h2>Butuh Bantuan atau Informasi Lain?</h2>
+                <p>Kami siap membantu Anda mengelola polis dan menemukan perlindungan lainnya.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <span class="icon">📄</span>
+                    <h4>Cara Klaim</h4>
+                    <p>Pahami alur dan dokumen yang diperlukan untuk melakukan klaim polis Anda dengan mudah.</p>
+                    <a href="panduan-klaim.html" class="step-link">Lihat Panduan</a>
+                </div>
+                <div class="step-card">
+                    <span class="icon">➕</span>
+                    <h4>Tambah Perlindungan</h4>
+                    <p>Jelajahi produk asuransi kami lainnya untuk melengkapi proteksi Anda dan keluarga.</p>
+                    <a href="index.html#produk" class="step-link">Lihat Produk Lain</a>
+                </div>
+                <div class="step-card">
+                    <span class="icon">💬</span>
+                    <h4>Hubungi Support</h4>
+                    <p>Tim customer service kami siap menjawab semua pertanyaan terkait polis Anda.</p>
+                    <a href="index.html#hubungi-kami" class="step-link">Hubungi Kami</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-section">
+        <h2>Hubungi Kami</h2>
+        <p>Punya pertanyaan? Tim kami siap membantu Anda.</p>
+        <p><strong>Email:</strong> support@insuper.com | <strong>Telepon:</strong> (021) 123-4567</p>
+        <div class="copyright">
+            &copy; 2025 INSUPER. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const historyList = document.getElementById('historyList');
+            const noHistoryMsg = document.getElementById('noHistoryMessage');
+
+            const historyData = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
+
+            if (historyData.length === 0) {
+                noHistoryMsg.style.display = 'block';
+            } else {
+                historyData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                historyData.forEach(purchase => {
+                    const card = document.createElement('div');
+                    card.className = 'history-card';
+
+                    const purchaseDate = new Date(purchase.date).toLocaleDateString('id-ID', {
+                        day: '2-digit', month: 'long', year: 'numeric'
+                    });
+                    const formattedPremium = `Rp ${parseInt(purchase.premium).toLocaleString('id-ID')}`;
+                    
+                    let paymentMethod = purchase.method;
+                    if (paymentMethod === 'virtual-account') paymentMethod = 'Virtual Account';
+                    if (paymentMethod === 'credit-card') paymentMethod = 'Kartu Kredit';
+                    
+                    let icon = '🛡️';
+                    if (purchase.product.toLowerCase().includes('kesehatan')) {
+                        icon = '❤️';
+                    } else if (purchase.product.toLowerCase().includes('mobil')) {
+                        icon = '🚗';
+                    } else if (purchase.product.toLowerCase().includes('jiwa')) {
+                        icon = '👨‍👩‍👧‍👦';
+                    }
+
+                    // --- LOGIKA BARU UNTUK STATUS ---
+                    let statusText = 'Lunas';
+                    let statusClass = 'paid';
+
+                    if (purchase.method === 'credit-card') {
+                        statusText = 'Belum Lunas';
+                        statusClass = 'unpaid';
+                    }
+                    // --- AKHIR LOGIKA BARU ---
+
+                    card.innerHTML = `
+                        <div class="card-icon">${icon}</div>
+                        <div class="card-details">
+                            <h3 class="product-name">${purchase.product}</h3>
+                            <p class="purchase-date">Dibeli pada: ${purchaseDate}</p>
+                            <p class="payment-method">Metode: ${paymentMethod}</p>
+                        </div>
+                        <div class="card-premium">
+                            <span class="premium-label">Premi Tahunan</span>
+                            <span class="premium-amount">${formattedPremium}</span>
+                        </div>
+                        <div class="card-status">
+                            <span class="status-badge ${statusClass}">${statusText}</span>
+                        </div>
+                    `;
+
+                    historyList.appendChild(card);
+                });
+            }
+
+            const logoutButton = document.getElementById('logoutButton');
+            logoutButton.addEventListener('click', () => {
+                localStorage.removeItem('isLoggedIn');
+                window.location.href = 'login.html';
+            });
+        });
+    </script>
+</body>
+</html>

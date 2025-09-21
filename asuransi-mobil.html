@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asuransi Mobil - INSUPER</title>
+    <link rel="stylesheet" href="product-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="brand-logo">
+                <img src="images/logo.png" alt="INSUPER Logo">
+                <span>INSUPER</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html#produk">Produk</a></li>
+                <li><a href="histori-pembelian.html">Histori</a></li>
+                <li><a href="index.html#tentang-kami">Tentang Kami</a></li>
+                <li><a href="index.html#hubungi-kami">Hubungi Kami</a></li>
+                <li><button id="logoutButton" class="btn-logout">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-header">
+            <div class="product-header-content">
+                <p class="breadcrumb"><a href="index.html#produk">Produk</a> > Asuransi Mobil</p>
+                <h1>Perlindungan Menyeluruh Untuk Kendaraan Kesayangan Anda</h1>
+                <p>Berkendara tanpa cemas dengan jaminan proteksi dari risiko kerusakan, kehilangan, dan tanggung jawab hukum di jalan.</p>
+                <a href="#hubungi-kami" class="btn btn-primary">Hubungi Kami</a>
+            </div>
+            <div class="product-header-image">
+                <img src="images/mobil-hero.jpg" alt="Mekanik sedang memperbaiki mesin mobil">
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="section-title">
+                <h2>Keunggulan Perlindungan Kami</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Jaringan Bengkel Luas</h3>
+                    <p>Akses ke ratusan bengkel rekanan resmi dan terpercaya di seluruh Indonesia.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Layanan Derek 24 Jam</h3>
+                    <p>Bantuan darurat di jalan siap membantu Anda kapan pun kendaraan Anda mengalami masalah.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Klaim Cepat & Mudah</h3>
+                    <p>Proses klaim yang transparan dan dapat dipantau secara online untuk kenyamanan Anda.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculator-section" class="calculator-section">
+            <div class="section-title">
+                <h2>Dapatkan Penawaran Premi Anda</h2>
+                <p>Isi data kendaraan Anda di bawah ini untuk mendapatkan estimasi premi terbaik.</p>
+            </div>
+            <div class="calculator-container">
+                <form id="mobilPremiumCalculator">
+                    <div class="calculator-grid">
+                        <div class="input-group"><label for="car-brand">Merk Mobil</label><input type="text" id="car-brand"></div>
+                        <div class="input-group"><label for="car-model">Jenis Mobil</label><input type="text" id="car-model"></div>
+                        <div class="input-group"><label for="car-year">Tahun Pembuatan</label><select id="car-year"><option value="" disabled selected>Pilih Tahun...</option></select></div>
+                        <div class="input-group"><label for="car-price">Harga Mobil (Rp)</label><input type="number" id="car-price" placeholder="Contoh: 250000000"></div>
+                        <div class="input-group"><label for="car-plate">Nomor Plat Mobil</label><input type="text" id="car-plate"></div>
+                        <div class="input-group"><label for="owner-name">Nama Pemilik (sesuai STNK)</label><input type="text" id="owner-name"></div>
+                        <div class="input-group"><label for="engine-number">Nomor Mesin</label><input type="text" id="engine-number"></div>
+                        <div class="input-group"><label for="chassis-number">Nomor Rangka</label><input type="text" id="chassis-number"></div>
+                    </div>
+
+                    <div class="photo-upload-section">
+                        <h4>Unggah Foto Kendaraan</h4>
+                        <div class="photo-upload-grid">
+                            <div class="input-group-file">
+                                <label>Tampak Depan</label>
+                                <input type="file" id="photo-front" class="file-input" accept="image/*">
+                                <label for="photo-front" class="file-label"><span>Pilih File...</span></label>
+                            </div>
+                            <div class="input-group-file">
+                                <label>Tampak Belakang</label>
+                                <input type="file" id="photo-back" class="file-input" accept="image/*">
+                                <label for="photo-back" class="file-label"><span>Pilih File...</span></label>
+                            </div>
+                            <div class="input-group-file">
+                                <label>Tampak Kiri</label>
+                                <input type="file" id="photo-left" class="file-input" accept="image/*">
+                                <label for="photo-left" class="file-label"><span>Pilih File...</span></label>
+                            </div>
+                            <div class="input-group-file">
+                                <label>Tampak Kanan</label>
+                                <input type="file" id="photo-right" class="file-input" accept="image/*">
+                                <label for="photo-right" class="file-label"><span>Pilih File...</span></label>
+                            </div>
+                            <div class="input-group-file">
+                                <label>Dashboard</label>
+                                <input type="file" id="photo-dashboard" class="file-input" accept="image/*">
+                                <label for="photo-dashboard" class="file-label"><span>Pilih File...</span></label>
+                            </div>
+                            <div class="input-group-file">
+                                <label>Mesin</label>
+                                <input type="file" id="photo-engine" class="file-input" accept="image/*">
+                                <label for="photo-engine" class="file-label"><span>Pilih File...</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Hitung Premi</button>
+                </form>
+                <div id="premiumResult" class="premium-result-display" style="display: none;">
+                    <h3>Estimasi Premi Tahunan Anda:</h3>
+                    <p id="calculatedPremium" class="premium-price">Rp 0</p>
+                    <a href="checkout.html" class="btn btn-primary">Checkout Sekarang</a>
+                </div>
+                 <div id="calculatorMessage" class="message" style="margin-top: 1rem;"></div>
+            </div>
+        </section>
+        
+        <section class="coverage-section">
+            <div class="section-title">
+                <h2>Cakupan Perlindungan Lengkap</h2>
+                <p>Asuransi Mobil INSUPER memberikan jaminan komprehensif untuk berbagai risiko di jalan.</p>
+            </div>
+                <div class="coverage-grid">
+                    <div class="coverage-item">
+                        <span class="icon">💥</span>
+                        <h4>Kerusakan Akibat Tabrakan</h4>
+                        <p>Jaminan perbaikan untuk kerusakan sebagian hingga total akibat tabrakan, benturan, atau tergelincir.</p>
+                    </div>
+                    <div class="coverage-item">
+                        <span class="icon">💸</span> <h4>Perlindungan Pencurian</h4>
+                        <p>Penggantian finansial jika kendaraan Anda dicuri, baik di tempat parkir maupun di lokasi lain.</p>
+                    </div>
+                    <div class="coverage-item">
+                        <span class="icon">🚗💥🚗</span> <h4>Tanggung Jawab Pihak Ketiga</h4>
+                        <p>Kami menanggung tuntutan ganti rugi dari pihak ketiga jika Anda menyebabkan kerugian pada orang lain saat berkendara.</p>
+                    </div>
+                    <div class="coverage-item">
+                        <span class="icon">⚡</span>
+                        <h4>Perlindungan Sambaran Petir</h4>
+                        <p>Kerusakan pada komponen kelistrikan dan bodi mobil akibat sambaran petir akan kami tanggung.</p>
+                    </div>
+                    <div class="coverage-item">
+                        <span class="icon">🔥</span>
+                        <h4>Kerusakan Akibat Kebakaran</h4>
+                        <p>Jaminan atas kerusakan atau kerugian total yang disebabkan oleh kebakaran yang tidak disengaja.</p>
+                    </div>
+                    <div class="coverage-item">
+                        <span class="icon">🌊</span>
+                        <h4>Banjir & Bencana Alam (Opsional)</h4>
+                        <p>Anda dapat menambahkan perluasan jaminan untuk melindungi kendaraan dari risiko banjir, gempa bumi, dan bencana alam lainnya.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    <footer id="hubungi-kami" class="footer-section">
+        <h2>Hubungi Kami</h2>
+        <p>Punya pertanyaan? Tim kami siap membantu Anda.</p>
+        <p><strong>Email:</strong> support@insuper.com | <strong>Telepon:</strong> (021) 123-4567</p>
+        <div class="copyright">&copy; 2025 INSUPER. All Rights Reserved.</div>
+    </footer>
+    <script src="mobil-calculator.js"></script>
+</body>
+</html>

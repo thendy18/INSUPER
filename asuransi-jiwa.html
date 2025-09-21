@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asuransi Jiwa - INSUPER</title>
+    <link rel="stylesheet" href="product-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="brand-logo">
+                <img src="images/logo.png" alt="INSUPER Logo">
+                <span>INSUPER</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html#produk">Produk</a></li>
+                <li><a href="histori-pembelian.html">Histori</a></li>
+                <li><a href="index.html#tentang-kami">Tentang Kami</a></li>
+                <li><a href="index.html#hubungi-kami">Hubungi Kami</a></li>
+                <li><button id="logoutButton" class="btn-logout" style="display: none;">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-header">
+            <div class="product-header-content" data-aos="fade-right" data-aos-once="true">
+                <p class="breadcrumb"><a href="index.html#produk">Produk</a> > Asuransi Jiwa</p>
+                <h1>Warisan Terbaik untuk Keluarga Tercinta</h1>
+                <p>Berikan kepastian finansial dan ketenangan bagi orang-orang yang Anda sayangi saat Anda sudah tiada.</p>
+                <a href="#hubungi-kami" class="btn btn-primary">Hubungi Kami</a>
+            </div>
+            <div class="product-header-image" data-aos="fade-left" data-aos-once="true">
+                <img src="images/hero-jiwa.jpg" alt="Keluarga multi-generasi yang bahagia">
+            </div>
+        </section>
+
+        <section class="features-section" data-aos="fade-up" data-aos-once="true">
+            <div class="section-title">
+                <h2>Keunggulan Perlindungan Jiwa Kami</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Uang Pertanggungan Besar</h3>
+                    <p>Pilihan uang pertanggungan hingga miliaran rupiah untuk menjamin masa depan keluarga Anda.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Premi Tetap & Terjangkau</h3>
+                    <p>Premi bulanan yang tetap selama masa pertanggungan, memudahkan perencanaan keuangan Anda.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Proses Mudah & Cepat</h3>
+                    <p>Pengajuan online yang simpel dengan proses persetujuan yang tidak berbelit-belit.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculator-section" class="calculator-section" data-aos="zoom-in" data-aos-once="true">
+            <div class="section-title">
+                <h2>Hitung Premi Bulanan Anda</h2>
+                <p>Hanya perlu 2 menit untuk mendapatkan estimasi premi asuransi jiwa Anda.</p>
+            </div>
+            <div class="calculator-container">
+                <form id="jiwaPremiumCalculator">
+                    <div class="calculator-grid">
+                        <div class="input-group">
+                            <label for="jiwa-fullname">Nama Lengkap (sesuai KTP)</label>
+                            <input type="text" id="jiwa-fullname">
+                        </div>
+                        <div class="input-group">
+                            <label for="jiwa-dob">Tanggal Lahir</label>
+                            <input type="date" id="jiwa-dob">
+                        </div>
+                        <div class="input-group full-width">
+                            <label for="jiwa-coverage">Pilih Besaran Uang Pertanggungan</label>
+                            <select id="jiwa-coverage">
+                                <option value="" disabled selected>Pilih nominal...</option>
+                                <option value="1000000000">Rp 1.000.000.000</option>
+                                <option value="2000000000">Rp 2.000.000.000</option>
+                                <option value="3500000000">Rp 3.500.000.000</option>
+                                <option value="5000000000">Rp 5.000.000.000</option>
+                                <option value="10000000000">Rp 10.000.000.000</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Hitung Premi</button>
+                </form>
+
+                <div id="premiumResult" class="premium-result-display" style="display: none;">
+                    <h3>Estimasi Premi Bulanan Anda:</h3>
+                    <p id="calculatedPremium" class="premium-price">Rp 0</p>
+                    <a href="checkout.html" class="btn btn-primary">Checkout Sekarang</a>
+                </div>
+                 <div id="calculatorMessage" class="message" style="margin-top: 1rem;"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="hubungi-kami" class="footer-section">
+        <h2>Hubungi Kami</h2>
+        <p>Punya pertanyaan? Tim kami siap membantu Anda.</p>
+        <p><strong>Email:</strong> support@insuper.com | <strong>Telepon:</strong> (021) 123-4567</p>
+        <div class="copyright">
+            &copy; 2025 INSUPER. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="jiwa-calculator.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

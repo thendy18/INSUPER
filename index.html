@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSUPER - Asuransi Terpercaya Anda</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+    <header class="main-header">
+    <nav class="navbar">
+        <a href="index.html" class="brand-logo">
+            <img src="images/logo.png" alt="INSUPER Logo">
+            <span>INSUPER</span>
+        </a>
+        
+        <button class="hamburger-menu" id="hamburgerBtn" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#produk">Produk</a></li>
+            <li><a href="#tentang-kami">Tentang Kami</a></li>
+            <li><a href="#hubungi-kami">Hubungi Kami</a></li>
+            <li><button id="logoutButton" class="btn-logout" style="display: none;">Logout</button></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-slider-container">
+                <div class="slide slide-1"></div>
+                <div class="slide slide-2"></div>
+                <div class="slide slide-3"></div>
+            </div>
+            <div class="hero-content">
+                <h1 id="welcomeMessage">Perlindungan Maksimal, Ketenangan Pikiran Total</h1>
+                <p>Temukan solusi asuransi yang dirancang khusus untuk setiap tahap kehidupan Anda bersama INSUPER.</p>
+                <div class="hero-buttons" id="authButtons">
+                    <a href="signup.html" class="btn btn-primary">Sign Up Sekarang</a>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="produk" class="product-section">
+            <div class="section-title" data-aos="fade-up" data-aos-once="true">
+                <h2>Temukan Produk Asuransi Terbaik Untuk Anda</h2>
+                <p>Kami menyediakan berbagai solusi perlindungan untuk setiap aspek kehidupan Anda.</p>
+            </div>
+            <div class="product-grid">
+               <div class="product-card" data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
+                    <h3>Asuransi Kesehatan</h3>
+                    <p>Proteksi kesehatan komprehensif untuk Anda dan keluarga tercinta dari risiko finansial tak terduga.</p>
+                    <a href="asuransi-kesehatan.html" class="product-link">LIHAT PRODUK</a>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+                    <h3>Asuransi Mobil</h3>
+                    <p>Lindungi kendaraan kesayangan Anda dari berbagai risiko di jalan, mulai dari kerusakan hingga kehilangan.</p>
+                    <a href="asuransi-mobil.html" class="product-link">LIHAT PRODUK</a>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
+                    <h3>Asuransi Jiwa</h3>
+                    <p>Warisan terbaik untuk masa depan orang-orang yang Anda sayangi saat Anda sudah tiada.</p>
+                    <a href="asuransi-jiwa.html" class="product-link">LIHAT PRODUK</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="tentang-kami" class="about-section-v2">
+            <div class="about-container">
+                <div class="about-image-wrapper" data-aos="fade-right" data-aos-once="true" data-aos-duration="800">
+                    <div class="image-accent"></div> 
+                    <img src="images/about-us-image.jpg" alt="Tim INSUPER sedang berdiskusi">
+                </div>
+                <div class="about-content" data-aos="fade-left" data-aos-once="true" data-aos-duration="800">
+                    <div class="section-title">
+                        <h2>Kenapa Memilih INSUPER?</h2>
+                        <p>Kami bukan sekadar perusahaan asuransi. Kami adalah partner Anda dalam merencanakan masa depan yang lebih aman dan tenang.</p>
+                    </div>
+                    <div class="features-list">
+                        </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="testimonials" class="testimonial-section">
+            <div class="section-title" data-aos="fade-up" data-aos-once="true">
+                <h2>Apa Kata Mereka?</h2>
+                <p>Ketenangan pikiran nasabah adalah prioritas dan kebanggaan terbesar kami.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card" data-aos="zoom-in" data-aos-once="true">
+                    <blockquote>"Proses klaim asuransi kesehatan anak saya sangat cepat..."</blockquote>
+                    <cite>— Rina Setiawati, Nasabah</cite>
+                </div>
+                <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="150" data-aos-once="true">
+                    <blockquote>"Sebagai pengusaha, saya butuh perlindungan yang pasti..."</blockquote>
+                    <cite>— Budi Santoso, Pengusaha</cite>
+                </div>
+            </div>
+        </section>
+
+            <footer id="hubungi-kami" class="footer-section">
+            <h2>Hubungi Kami</h2>
+            <p>Punya pertanyaan? Tim kami siap membantu Anda.</p>
+            <p><strong>Email:</strong> support@insuper.com | <strong>Telepon:</strong> (021) 123-4567</p>
+            <div class="copyright">
+                &copy; 2025 INSUPER. All Rights Reserved.
+            </div>
+        </footer>
+    </main>
+
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

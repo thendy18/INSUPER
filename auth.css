@@ -1,0 +1,166 @@
+/* Pengaturan Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0d2c54;
+    color: #333;
+    padding: 1rem;
+}
+
+/* Kartu Form Utama */
+.auth-container {
+    max-width: 480px;
+    width: 100%;
+}
+
+.auth-card {
+    background-color: #ffffff;
+    padding: 1.8rem 2.2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.auth-card h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #0d2c54;
+    margin-bottom: 0.3rem;
+}
+
+.auth-card .sub-heading {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+}
+
+/* Grup Input */
+.input-group {
+    margin-bottom: 0.8rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #0d2c54;
+    box-shadow: 0 0 0 3px rgba(13, 44, 84, 0.1);
+}
+
+/* Tombol */
+.btn {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #0d2c54;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 0.8rem;
+}
+
+.btn:hover {
+    background-color: #1a4a8a;
+    transform: translateY(-2px);
+}
+
+/* Pesan Error & Sukses */
+.message {
+    text-align: center;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    display: block;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    display: block;
+}
+
+/* Link Bawah */
+.bottom-links {
+    text-align: center;
+    margin-top: 1.2rem;
+    font-size: 0.9rem;
+}
+
+.bottom-links p {
+    margin-bottom: 0.3rem;
+}
+
+.bottom-links a {
+    color: #0d2c54;
+    font-weight: 600;
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+}
+
+.bottom-links a:hover {
+    text-decoration: underline;
+}
+
+.home-link {
+    margin-top: 0.5rem;
+}
+
+/* Penyesuaian Layar Kecil */
+@media (max-height: 700px) {
+    .auth-card {
+        padding: 1.5rem;
+    }
+    .auth-card h2 {
+        font-size: 1.6rem;
+    }
+    .auth-card .sub-heading {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+    .input-group label, .input-group input, .message, .bottom-links {
+        font-size: 0.85rem;
+    }
+    .input-group input {
+        padding: 0.6rem 0.8rem;
+    }
+    .btn {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+    }
+}

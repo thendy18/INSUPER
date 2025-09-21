@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran - INSUPER</title>
+    <link rel="stylesheet" href="auth.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Lakukan Pembayaran</h2>
+            <p class="sub-heading">Pilih metode pembayaran dan selesaikan transaksimu.</p>
+
+            <div class="summary">
+                <div class="summary-item">
+                    <span>Produk Asuransi:</span>
+                    <strong id="checkoutProductName">Memuat...</strong>
+                </div>
+                <div class="summary-item total">
+                    <span>Total Premi Tahunan:</span>
+                    <strong id="checkoutPremium">Memuat...</strong>
+                </div>
+            </div>
+
+            <div class="payment-method-section">
+                <h4>Pilih Metode Pembayaran</h4>
+                <div class="payment-options">
+                    <div class="payment-option" data-method="virtual-account">
+                        <span>Virtual Account</span>
+                    </div>
+                    <div class="payment-option" data-method="credit-card">
+                        <span>Kartu Kredit</span>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="button" id="payButton" class="btn">Bayar Sekarang</button>
+            
+            <div id="paymentMessage" class="message" style="margin-top: 1rem;"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const premiumDisplay = document.getElementById('checkoutPremium');
+            const productDisplay = document.getElementById('checkoutProductName');
+            const payButton = document.getElementById('payButton');
+            const paymentOptions = document.querySelectorAll('.payment-option');
+            const messageDiv = document.getElementById('paymentMessage');
+
+            let selectedMethod = null;
+
+            const finalPremium = localStorage.getItem('finalPremium');
+            const productName = localStorage.getItem('productName');
+
+            productDisplay.textContent = productName || "Produk tidak ditemukan.";
+            if (finalPremium) {
+                premiumDisplay.textContent = `Rp ${parseInt(finalPremium).toLocaleString('id-ID')}`;
+            } else {
+                premiumDisplay.textContent = "Harga tidak ditemukan.";
+            }
+
+            paymentOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    paymentOptions.forEach(opt => opt.classList.remove('selected'));
+                    option.classList.add('selected');
+                    selectedMethod = option.getAttribute('data-method');
+                    messageDiv.style.display = 'none';
+                });
+            });
+
+            payButton.addEventListener('click', () => {
+                if (!selectedMethod) {
+                    messageDiv.textContent = 'Harap pilih metode pembayaran terlebih dahulu.';
+                    messageDiv.className = 'message error';
+                    messageDiv.style.display = 'block';
+                    return;
+                }
+
+                payButton.textContent = 'Memproses...';
+                payButton.disabled = true;
+
+                setTimeout(() => {
+                    const purchaseData = {
+                        product: productName,
+                        premium: finalPremium,
+                        method: selectedMethod,
+                        date: new Date().toISOString()
+                    };
+                    
+                    let history = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
+                    history.push(purchaseData);
+                    localStorage.setItem('purchaseHistory', JSON.stringify(history));
+
+                    window.location.href = 'histori-pembelian.html'; 
+                }, 2000);
+            });
+        });
+    </script>
+    
+    <style>
+        .summary { margin-bottom: 2rem; text-align: left; }
+        .summary-item { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0; border-bottom: 1px solid #eee; }
+        .summary-item span { color: #666; font-size: 0.9rem; }
+        .summary-item strong { font-weight: 600; color: #333; }
+        .summary-item.total { border-bottom: none; }
+        .summary-item.total span { font-size: 1rem; }
+        .summary-item.total strong {
+            font-size: 2rem;
+            color: #0d2c54;
+            white-space: nowrap; /* TAMBAHKAN BARIS INI */
+        }
+        .payment-method-section { text-align: left; margin-bottom: 2rem; }
+        .payment-method-section h4 { font-weight: 600; margin-bottom: 1rem; color: #333; }
+        .payment-options { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .payment-option { border: 2px solid #ddd; border-radius: 10px; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s ease; }
+        .payment-option:hover { border-color: #0d2c54; background-color: #f4f7f6; }
+        .payment-option.selected { border-color: #0d2c54; background-color: #eef2f7; box-shadow: 0 0 0 2px #0d2c54; }
+        .payment-option span { font-size: 0.9rem; font-weight: 500; color: #333; }
+
+        /* Tambahan untuk responsif di layar sangat kecil */
+        @media (max-width: 400px) {
+            .summary-item.total strong {
+                font-size: 1.5rem; /* Perkecil font agar muat */
+            }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - INSUPER</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Selamat Datang Kembali</h2>
+            <p class="sub-heading">Masuk untuk melanjutkan ke akun Anda.</p>
+            
+            <div id="message" class="message"></div>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="input-group">
+                    <label for="password">Kata Sandi</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <div class="bottom-links">
+                <p>Belum punya akun? <a href="signup.html">Daftar di sini</a></p>
+                <p class="home-link"><a href="index.html">Kembali ke Home</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

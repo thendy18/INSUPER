@@ -1,0 +1,316 @@
+/* --- product-detail.css --- */
+@import url('style.css');
+
+/* Header Produk */
+.product-header {
+    display: flex;
+    align-items: center;
+    background-color: #f4f7f6;
+    padding: 4rem 5%;
+    gap: 2rem;
+}
+.product-header-content {
+    flex: 1;
+}
+.product-header-content h1 {
+    font-size: 3.5rem;
+    color: #0d2c54;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+.product-header-content .breadcrumb {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+.product-header-content .breadcrumb a {
+    color: #0d2c54;
+    font-weight: 600;
+}
+.product-header-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+.product-header-content .btn.btn-primary {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 0.8rem 2.5rem;
+    background-color: #ffc107;
+    color: #0d2c54;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+.product-header-content .btn.btn-primary:hover {
+    background-color: #e0a800;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2);
+}
+.product-header-image {
+    flex: 1;
+    max-width: 500px;
+}
+.product-header-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Keunggulan */
+.features-section {
+    padding: 4rem 5%;
+    background-color: #ffffff;
+}
+.features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.feature-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 2rem;
+    flex-basis: 320px;
+    flex-grow: 1;
+    text-align: left;
+    border-top: 4px solid #ffc107;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    color: #0d2c54;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: #555;
+}
+
+/* Section Kalkulator */
+.calculator-section {
+    padding: 6rem 5%;
+    background-color: #ffffff;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="%23f4f7f6" fill-opacity="0.8"><circle cx="25" cy="25" r="5"/><circle cx="75" cy="75" r="5"/><circle cx="75" cy="25" r="5"/><circle cx="25" cy="75" r="5"/></g></svg>');
+    background-size: 50px 50px;
+}
+.calculator-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+    border: 1px solid #eee;
+}
+.calculator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+.calculator-container .input-group input,
+.calculator-container .input-group select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+.calculator-container .input-group select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5z%22%20fill%3D%22%23888%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem;
+}
+.calculator-container .input-group input[type="date"] {
+    background-image: none;
+    padding-right: 1rem;
+}
+.calculator-container .input-group input:focus,
+.calculator-container .input-group select:focus {
+    outline: none;
+    border-color: #0d2c54;
+    box-shadow: 0 0 0 3px rgba(13, 44, 84, 0.1);
+}
+.calculator-container .btn,
+.premium-result-display .btn {
+    width: 100%;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.calculator-container .btn-primary {
+    background-color: #0d2c54;
+    color: #ffffff;
+}
+.calculator-container .btn-primary:hover {
+    background-color: #1a4a8a;
+    transform: translateY(-3px);
+}
+.premium-result-display {
+    margin-top: 2rem;
+    padding: 2rem;
+    border: 2px dashed #0d2c54;
+    border-radius: 10px;
+    text-align: center;
+}
+.premium-result-display h3 {
+    color: #555;
+    font-weight: 500;
+}
+.premium-result-display .premium-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0d2c54;
+    margin: 0.5rem 0 1.5rem 0;
+}
+.premium-result-display .btn-primary {
+    background-color: #ffc107;
+    color: #0d2c54;
+}
+.premium-result-display .btn-primary:hover {
+    background-color: #e0a800;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2);
+}
+.photo-upload-section {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+.photo-upload-section h4 {
+    text-align: center;
+    color: #0d2c54;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+.photo-upload-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.input-group-file {
+    text-align: center;
+}
+.input-group-file label {
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.input-group-file .file-input {
+    display: none;
+}
+.input-group-file .file-label {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #f4f7f6;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+.input-group-file .file-label:hover {
+    background-color: #e9ecef;
+    border-color: #ccc;
+}
+.input-group-file .file-label span {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+    vertical-align: middle;
+}
+
+/* Section Cakupan Perlindungan */
+.coverage-section {
+    padding: 4rem 5%;
+    background-color: #ffffff;
+}
+.coverage-section .section-title p {
+    text-align: center;
+}
+.coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.coverage-item {
+    text-align: left;
+    padding: 2rem;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.coverage-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+.coverage-item .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+.coverage-item h4 {
+    font-size: 1.3rem;
+    color: #0d2c54;
+    margin-bottom: 0.5rem;
+}
+.coverage-item p {
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Gaya untuk input yang error */
+.error-input {
+    border-color: #e74c3c !important;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2) !important;
+}
+
+/* Penyesuaian Alignment Judul Section */
+.features-section .section-title,
+.calculator-section .section-title {
+    text-align: center;
+}
+
+/* Penyesuaian agar judul Keunggulan tidak turun baris */
+.features-section .section-title h2 {
+    font-size: 2.2rem;
+}
+/* Responsif */
+@media (max-width: 768px) {
+    .product-header {
+        flex-direction: column;
+    }
+    .product-header-content h1 {
+        font-size: 2.5rem;
+    }
+    .calculator-grid {
+        grid-template-columns: 1fr;
+    }
+}

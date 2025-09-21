@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asuransi Kesehatan - INSUPER</title>
+    <link rel="stylesheet" href="product-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="brand-logo">
+                <img src="images/logo.png" alt="INSUPER Logo">
+                <span>INSUPER</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html#produk">Produk</a></li>
+                <li><a href="histori-pembelian.html">Histori</a></li>
+                <li><a href="index.html#tentang-kami">Tentang Kami</a></li>
+                <li><a href="index.html#hubungi-kami">Hubungi Kami</a></li>
+                <li><button id="logoutButton" class="btn-logout">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-header">
+            <div class="product-header-content" data-aos="fade-right" data-aos-once="true">
+                <p class="breadcrumb"><a href="index.html#produk">Produk</a> > Asuransi Kesehatan</p>
+                <h1>Proteksi Kesehatan Total Untuk Anda & Keluarga</h1>
+                <p>Miliki ketenangan pikiran dengan jaminan perlindungan biaya medis yang komprehensif, dari rawat inap hingga perawatan kritis.</p>
+                <a href="#hubungi-kami" class="btn btn-primary">Hubungi Kami</a>
+            </div>
+            <div class="product-header-image" data-aos="fade-left" data-aos-once="true">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070" alt="Dokter memeriksa pasien dengan stetoskop">
+            </div>
+        </section>
+
+        <section class="features-section" data-aos="fade-up" data-aos-once="true">
+            <div class="section-title">
+                <h2>Patut untuk Dipertimbangkan</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Jangkauan Luas</h3>
+                    <p>Akses ke ribuan rumah sakit rekanan di seluruh Indonesia bahkan dunia, tanpa perlu khawatir soal biaya.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Proses Klaim Mudah</h3>
+                    <p>Nikmati kemudahan klaim cashless hanya dengan menunjukkan kartu, atau proses reimbursement yang cepat secara online.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Manfaat Fleksibel</h3>
+                    <p>Pilih plan perlindungan yang paling sesuai dengan kebutuhan dan anggaran Anda, mulai dari kamar hingga batas tahunan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculator-section" class="calculator-section" data-aos="zoom-in" data-aos-once="true">
+            <div class="section-title">
+                <h2>Hitung Estimasi Premi Anda</h2>
+                <p>Isi data di bawah ini untuk melihat perkiraan premi tahunan Anda.</p>
+            </div>
+            <div class="calculator-container">
+                <form id="premiumCalculator">
+                    <div class="calculator-grid">
+                        <div class="input-group">
+                            <label for="calc-fullname">Nama Lengkap (sesuai KTP)</label>
+                            <input type="text" id="calc-fullname">
+                        </div>
+                        <div class="input-group">
+                            <label for="calc-dob">Tanggal Lahir</label>
+                            <input type="date" id="calc-dob">
+                        </div>
+                        <div class="input-group">
+                            <label for="calc-job">Pekerjaan</label>
+                            <input type="text" id="calc-job">
+                        </div>
+                        <div class="input-group">
+                            <label for="calc-smoker">Merokok?</label>
+                            <select id="calc-smoker">
+                                <option value="" disabled selected>Pilih...</option>
+                                <option value="1">Ya</option>
+                                <option value="0">Tidak</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="calc-hypertension">Riwayat Hipertensi?</label>
+                            <select id="calc-hypertension">
+                                <option value="" disabled selected>Pilih...</option>
+                                <option value="1">Ya</option>
+                                <option value="0">Tidak</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="calc-diabetes">Riwayat Diabetes?</label>
+                            <select id="calc-diabetes">
+                                <option value="" disabled selected>Pilih...</option>
+                                <option value="1">Ya</option>
+                                <option value="0">Tidak</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Hitung Premi</button>
+                </form>
+                <div id="premiumResult" class="premium-result-display" style="display: none;">
+                    <h3>Estimasi Premi Tahunan Anda:</h3>
+                    <p id="calculatedPremium" class="premium-price">Rp 0</p>
+                    <a href="checkout.html" class="btn btn-primary">Checkout Sekarang</a>
+                </div>
+                 <div id="calculatorMessage" class="message" style="margin-top: 1rem;"></div>
+            </div>
+        </section>
+
+        <section class="coverage-section" data-aos="fade-up" data-aos-once="true">
+            <div class="section-title">
+                <h2>Cakupan Perlindungan Lengkap</h2>
+                <p>Asuransi Kesehatan INSUPER memberikan jaminan untuk berbagai kebutuhan medis penting.</p>
+            </div>
+            <div class="coverage-grid">
+                <div class="coverage-item">
+                    <span class="icon">🛏️</span>
+                    <h4>Kamar & Akomodasi</h4>
+                    <p>Biaya kamar rawat inap sesuai dengan plan pilihan Anda, termasuk unit perawatan intensif (ICU).</p>
+                </div>
+                <div class="coverage-item">
+                    <span class="icon">⚕️</span>
+                    <h4>Tindakan Pembedahan</h4>
+                    <p>Menjamin biaya untuk berbagai jenis operasi, baik besar, sedang, maupun kecil.</p>
+                </div>
+                <div class="coverage-item">
+                    <span class="icon">👨‍⚕️</span>
+                    <h4>Kunjungan Dokter</h4>
+                    <p>Meliputi biaya konsultasi dokter umum dan dokter spesialis selama masa perawatan di rumah sakit.</p>
+                </div>
+                <div class="coverage-item">
+                    <span class="icon">💊</span>
+                    <h4>Obat-obatan</h4>
+                    <p>Penggantian biaya obat-obatan sesuai resep dokter selama Anda menjalani rawat inap.</p>
+                </div>
+                <div class="coverage-item">
+                    <span class="icon">🚑</span>
+                    <h4>Layanan Ambulans</h4>
+                    <p>Menyediakan jaminan biaya untuk penggunaan layanan ambulans darurat ke rumah sakit.</p>
+                </div>
+                <div class="coverage-item">
+                    <span class="icon">🦷</span>
+                    <h4>Perawatan Gigi Darurat</h4>
+                    <p>Perlindungan untuk perawatan gigi dan gusi yang diperlukan akibat kecelakaan.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="hubungi-kami" class="footer-section">
+        <h2>Hubungi Kami</h2>
+        <p>Punya pertanyaan? Tim kami siap membantu Anda.</p>
+        <p><strong>Email:</strong> support@insuper.com | <strong>Telepon:</strong> (021) 123-4567</p>
+        <div class="copyright">
+            &copy; 2025 INSUPER. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="calculator.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+</html>

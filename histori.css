@@ -1,0 +1,222 @@
+/* --- histori.css --- */
+@import url('style.css');
+
+.history-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 5%;
+}
+
+.history-container h1 {
+    font-size: 3rem;
+    color: #0d2c54;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.history-container > p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 3.5rem;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.history-card {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.history-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+    background-color: #f4f7f6;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-details {
+    flex-grow: 1;
+}
+
+.product-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #0d2c54;
+    margin: 0 0 0.25rem 0;
+}
+
+.purchase-date, .payment-method {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.card-premium {
+    text-align: right;
+    margin-left: 1rem;
+}
+
+.premium-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.premium-amount {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #0d2c54;
+}
+
+.card-status {
+    margin-left: 2rem;
+}
+
+/* Badge Status */
+.status-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status-badge.paid { /* Untuk status LUNAS */
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-badge.unpaid { /* Untuk status BELUM LUNAS */
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.no-history-message {
+    text-align: center;
+    padding: 4rem;
+    background-color: #ffffff;
+    border: 2px dashed #e0e0e0;
+    border-radius: 15px;
+}
+
+.no-history-message p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Section Langkah Selanjutnya */
+.next-steps-section {
+    padding: 5rem 5%;
+    background-color: #f4f7f6;
+    border-top: 1px solid #e0e0e0;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.step-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.step-card .icon {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.step-card h4 {
+    font-size: 1.5rem;
+    color: #0d2c54;
+    margin: 1rem 0;
+}
+
+.step-card p {
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.step-link {
+    font-weight: 600;
+    color: #0d2c54;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.step-link::after {
+    content: '→';
+    margin-left: 8px;
+    transition: margin-left 0.3s ease;
+}
+
+.step-link:hover::after {
+    margin-left: 15px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .history-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+    }
+    .card-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    .card-premium, .card-status {
+        text-align: left;
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+    }
+    .card-premium {
+        padding-top: 1rem;
+        border-top: 1px solid #eee;
+    }
+}
+
+.next-steps-section .section-title h2 {
+    font-size: 2.2rem; 
+     text-align: center;
+}
+
+.next-steps-section .section-title p {
+    text-align: center; 
+}

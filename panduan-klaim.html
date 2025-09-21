@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Klaim - INSUPER</title>
+    <link rel="stylesheet" href="panduan.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="brand-logo">
+                <img src="images/logo.png" alt="INSUPER Logo">
+                <span>INSUPER</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html#produk">Produk</a></li>
+                <li><a href="histori-pembelian.html">Histori</a></li>
+                <li><a href="index.html#tentang-kami">Tentang Kami</a></li>
+                <li><a href="index.html#hubungi-kami">Hubungi Kami</a></li>
+                <li><button id="logoutButton" class="btn-logout">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="claim-guide-container">
+            <h1>Panduan Klaim Asuransi</h1>
+            <p>Proses klaim yang mudah dan transparan dalam 4 langkah.</p>
+
+            <div class="steps-container-horizontal">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Siapkan Dokumen</h3>
+                        <p>Kumpulkan formulir klaim, kuitansi asli, resume medis, dan fotokopi identitas Anda.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Kirim Pengajuan</h3>
+                        <p>Kirimkan semua dokumen Anda secara online melalui email atau serahkan ke kantor cabang terdekat.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Verifikasi Tim Kami</h3>
+                        <p>Tim INSUPER akan memeriksa kelengkapan dan keabsahan dokumen dalam 3-5 hari kerja.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Klaim Disetujui</h3>
+                        <p>Setelah disetujui, dana akan segera kami transfer langsung ke rekening terdaftar Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="faq-section">
+            <div class="section-title">
+                <h2>Pertanyaan Sering Diajukan</h2>
+            </div>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Berapa lama proses klaim hingga selesai?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Proses verifikasi hingga keputusan klaim biasanya memakan waktu 3-5 hari kerja setelah semua dokumen kami terima secara lengkap. Proses pembayaran akan dilakukan 1-2 hari kerja setelah klaim disetujui.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Dokumen apa saja yang wajib ada untuk klaim?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Dokumen utama adalah Formulir Klaim yang diisi lengkap, KTP, Kartu Asuransi, dan dokumen pendukung sesuai jenis klaim (misalnya, kuitansi asli dan resume medis untuk klaim kesehatan).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Bagaimana cara melacak status klaim saya?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Anda dapat menghubungi Customer Service kami melalui email di klaim@insuper.com atau telepon di (021) 123-4567 dengan menyertakan nomor polis Anda. Tim kami akan memberikan update terkini mengenai status klaim Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="hubungi-kami" class="footer-section">
+        <h2>Hubungi Kami</h2>
+        <p>Punya pertanyaan? Tim kami siap membantu Anda.</p>
+        <p><strong>Email:</strong> support@insuper.com | <strong>Telepon:</strong> (021) 123-4567</p>
+        <div class="copyright">
+            &copy; 2025 INSUPER. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('.icon');
+
+                item.classList.toggle('active');
+
+                if (item.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.textContent = '−';
+                } else {
+                    answer.style.maxHeight = '0px';
+                    icon.textContent = '+';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
