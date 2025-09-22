@@ -1,4 +1,4 @@
-// --- main.js (Tanpa Kode Slider) --- //
+// --- main.js --- //
 document.addEventListener('DOMContentLoaded', () => {
     
     // Logika untuk Cek Status Login
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-     // --- KODE BARU UNTUK MENU HAMBURGER ---
+     // --- Hamburger --- //
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const navMenu = document.getElementById('navMenu');
 
